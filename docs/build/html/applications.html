@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Applications &mdash; Tryouts v1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'v1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Tryouts v1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to Tryouts’ API Documentation!" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-application">
+<h2>Create Application<a class="headerlink" href="#create-application" title="Permalink to this headline">¶</a></h2>
+<p>Method: <strong>POST</strong>
+Endpoint: <strong>/v1/applications/</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="69%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Device Type</th>
+<th class="head">Id</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>iOS</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>Android</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Example Requests:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/&#39; \
+-X POST \
+-H &quot;Authorization: app_id:app_secret&quot; \
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{
+        &quot;name&quot;: &quot;My new fancy app&quot;,
+        &quot;device_type&quot;: 1,
+        &quot;icon_file&quot;: &quot;base64 image string&quot;
+}&#39;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the field <cite>icon_file</cite> is optional.</p>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
+        <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
+        <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+        <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;8YonowI8&quot;</span><span class="p">,</span>
+        <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+        <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-applications">
+<h2>List Applications<a class="headerlink" href="#list-applications" title="Permalink to this headline">¶</a></h2>
+<p>Method: <strong>GET</strong>
+Endpoint: <strong>/v1/applications/</strong></p>
+<p>Example Requests:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/&#39; \
+-H &quot;Authorization: app_id:app_secret&quot; \
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>{
+                &quot;count&quot;: 25,
+                &quot;next&quot;: &quot;https://api.tryouts.io/v1/applications/?page=3&quot;,
+                &quot;previous&quot;: &quot;https://api.tryouts.io/v1/applications/?page=1&quot;,
+                &quot;results&quot;: [
+                {
+                        &quot;id&quot;: 9,
+                        &quot;name&quot;: &quot;my new fancy app&quot;,
+                        &quot;os_name&quot;: &quot;iOS&quot;,
+                        &quot;device_type&quot;: &quot;1&quot;,
+                        &quot;short_hash&quot;: &quot;ITd1aWzR&quot;,
+                        &quot;latest_release&quot;: {
+                                &quot;id&quot;: 106,
+                                &quot;release_number&quot;: &quot;0.3.0b1&quot;,
+                                &quot;release_notes&quot;: &quot;&quot;,
+                                &quot;release_date&quot;: &quot;2015-11-11T10:31:12.025Z&quot;,
+                                &quot;minimum_os_version&quot;: &quot;7.0&quot;,
+                                &quot;size&quot;: &quot;0.19 MB&quot;,
+                                &quot;short_hash&quot;: &quot;N44G3jcd&quot;,
+                                &quot;cf_bundle_short_version_string&quot;: &quot;0.3.0&quot;,
+                                &quot;cf_bundle_version&quot;: &quot;0.3.0b1&quot;,
+                                &quot;is_ios_enterprise_build&quot;: false,
+                                &quot;identifier&quot;: &quot;W9875NV3WF.com.hipo.HappyBird&quot;
+                        },
+                        &quot;icon_original&quot;: &quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;,
+                        &quot;icon_thumbnail&quot;: &quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;
+                },
+                {
+                        &quot;id&quot;: 3,
+                        &quot;name&quot;: &quot;my new fancy app&quot;,
+                        &quot;os_name&quot;: &quot;Android&quot;,
+                        &quot;device_type&quot;: &quot;3&quot;,
+                        &quot;short_hash&quot;: &quot;zFBQ1NoV&quot;,
+                        &quot;latest_release&quot;: {
+                                &quot;id&quot;: 133,
+                                &quot;release_number&quot;: &quot;1.0&quot;,
+                                &quot;release_notes&quot;: &quot;&quot;,
+                                &quot;release_date&quot;: &quot;2015-11-17T14:56:10.821Z&quot;,
+                                &quot;minimum_os_version&quot;: &quot;Android 4.0.3, 4.0.4&quot;,
+                                &quot;size&quot;: &quot;7.59 MB&quot;,
+                                &quot;short_hash&quot;: &quot;oNZ4QpAG&quot;
+                        },
+                        &quot;icon_original&quot;: &quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;,
+                        &quot;icon_thumbnail&quot;: &quot;http://ubuntu.local/static/img/appicon.jpg&quot;
+                }
+                ...
+        ]
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-detail">
+<h2>Application Detail<a class="headerlink" href="#application-detail" title="Permalink to this headline">¶</a></h2>
+<p>Method: <strong>GET</strong>
+Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/</strong></p>
+<p>Example Requests:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/oNZ4QpAG/&#39; \
+-H &quot;Authorization: app_id:app_secret&quot; \
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
+        <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
+        <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+        <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;zFBQ1NoV&quot;</span><span class="p">,</span>
+        <span class="s">&quot;latest_release&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">133</span><span class="p">,</span>
+                <span class="s">&quot;release_number&quot;</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span>
+                <span class="s">&quot;release_notes&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                <span class="s">&quot;release_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-17T14:56:10.821Z&quot;</span><span class="p">,</span>
+                <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 4.0.3, 4.0.4&quot;</span><span class="p">,</span>
+                <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;7.59 MB&quot;</span><span class="p">,</span>
+                <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+        <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon.jpg&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-testers">
+<h2>Application Testers<a class="headerlink" href="#application-testers" title="Permalink to this headline">¶</a></h2>
+<p>Method: <strong>GET</strong>
+Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
+<p>Example Requests:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/&#39; \
+-H &quot;Authorization: app_id:app_secret&quot; \
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s">&quot;first_name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;last_name&quot;</span><span class="p">:</span> <span class="s">&quot;tester&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                <span class="p">{</span>
+                                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                                        <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                                        <span class="s">&quot;udid&quot;</span><span class="p">:</span> <span class="s">&quot;7c8aff46e2e9517bbe8dec7dc0a73ad500000000&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;os&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;os_version&quot;</span><span class="p">:</span> <span class="s">&quot;iOS 8.1&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;model&quot;</span><span class="p">:</span> <span class="s">&quot;iPhone 6&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;hex_id&quot;</span><span class="p">:</span> <span class="s">&quot;a098ceef-3836-4cae-932d-b7f7dbcc9e81&quot;</span>
+                                <span class="p">},</span>
+                                <span class="p">{</span>
+                                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+                                        <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                                        <span class="s">&quot;udid&quot;</span><span class="p">:</span> <span class="s">&quot;9337d45be4824226bfaa53ede1f082ce&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;os&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 5.1.1&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;model&quot;</span><span class="p">:</span> <span class="s">&quot;Nexus 6&quot;</span><span class="p">,</span>
+                                        <span class="s">&quot;hex_id&quot;</span><span class="p">:</span> <span class="s">&quot;d7d5b3f8-1ebc-4935-983a-84a0acf31754&quot;</span>
+                                <span class="p">}</span>
+                        <span class="p">],</span>
+                        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy tester&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;fancytester@tryouts.io&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;date_joined&quot;</span><span class="p">:</span> <span class="s">&quot;2015-10-22T13:44:59Z&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;avatar_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://www.gravatar.com/avatar/0488cdedcdbed4d47779329d46bc4c3a?s=240&amp;d=https%3A</span><span class="si">%2F%2F</span><span class="s">tryouts.io</span><span class="si">%2F</span><span class="s">static</span><span class="si">%2F</span><span class="s">img</span><span class="si">%2F</span><span class="s">default-avatar.png&quot;</span><span class="p">,</span>
+                        <span class="s">&quot;avatar_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://www.gravatar.com/avatar/0488cdedcdbed4d47779329d46bc4c3a?s=90&amp;d=https%3A</span><span class="si">%2F%2F</span><span class="s">tryouts.io</span><span class="si">%2F</span><span class="s">static</span><span class="si">%2F</span><span class="s">img</span><span class="si">%2F</span><span class="s">default-avatar.png&quot;</span>
+                <span class="p">},</span>
+                <span class="o">....</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Applications</a><ul>
+<li><a class="reference internal" href="#create-application">Create Application</a></li>
+<li><a class="reference internal" href="#list-applications">List Applications</a></li>
+<li><a class="reference internal" href="#application-detail">Application Detail</a></li>
+<li><a class="reference internal" href="#application-testers">Application Testers</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Tryouts&#8217; API Documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/applications.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Tryouts.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/applications.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
