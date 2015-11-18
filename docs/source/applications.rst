@@ -78,6 +78,8 @@ Response:
                     "minimum_os_version": "7.0",
                     "size": "0.19 MB",
                     "short_hash": "N44G3jcd",
+                    "download_link": "https://tryouts.io/releases/N44G3jcd/",
+                    "public_install_link": "https://tryouts.io/releases/N44G3jcd/install/",
                     "cf_bundle_short_version_string": "0.3.0",
                     "cf_bundle_version": "0.3.0b1",
                     "is_ios_enterprise_build": false,
