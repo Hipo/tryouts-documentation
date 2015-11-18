@@ -1,0 +1,16 @@
+*.log
+*.pot
+*.pyc
+*.swp
+*.ipynb
+.DS_Store
+.idea
+.tmp
+# Sublime Text CodeIntel config
+.codeintel/*
+.cloak/*
+!.jshintrc
+!.bowerrc
+!.gitignore
+*.mo
+
