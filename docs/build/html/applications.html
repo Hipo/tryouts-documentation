@@ -32,7 +32,7 @@
   
     <link rel="top" title="Tryouts v1 documentation" href="index.html"/>
         <link rel="next" title="Invitations" href="invitations.html"/>
-        <link rel="prev" title="Welcome to Tryouts’ API Documentation!" href="index.html"/> 
+        <link rel="prev" title="Authentication" href="authentication.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,6 +82,7 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Applications</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#create-application">Create Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#list-applications">List Applications</a></li>
@@ -90,6 +91,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="invitations.html">Invitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
 </ul>
 
             
@@ -165,9 +167,9 @@ Endpoint: <strong>/v1/applications/</strong></p>
 -H &quot;Authorization: app_id:app_secret&quot; \
 -H &quot;Content-Type: application/json&quot; \
 -d &#39;{
-        &quot;name&quot;: &quot;My new fancy app&quot;,
-        &quot;device_type&quot;: 1,
-        &quot;icon_file&quot;: &quot;base64 image string&quot;
+    &quot;name&quot;: &quot;My new fancy app&quot;,
+    &quot;device_type&quot;: 1,
+    &quot;icon_file&quot;: &quot;base64 image string&quot;
 }&#39;
 </pre></div>
 </div>
@@ -177,13 +179,13 @@ Endpoint: <strong>/v1/applications/</strong></p>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
-        <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
-        <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
-        <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;8YonowI8&quot;</span><span class="p">,</span>
-        <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
-        <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;</span><span class="p">,</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
+    <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
+    <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;8YonowI8&quot;</span><span class="p">,</span>
+    <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+    <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -198,54 +200,54 @@ Endpoint: <strong>/v1/applications/</strong></p>
 </pre></div>
 </div>
 <p>Response:</p>
-<div class="highlight-python"><div class="highlight"><pre>{
-                &quot;count&quot;: 25,
-                &quot;next&quot;: &quot;https://api.tryouts.io/v1/applications/?page=3&quot;,
-                &quot;previous&quot;: &quot;https://api.tryouts.io/v1/applications/?page=1&quot;,
-                &quot;results&quot;: [
-                {
-                        &quot;id&quot;: 9,
-                        &quot;name&quot;: &quot;my new fancy app&quot;,
-                        &quot;os_name&quot;: &quot;iOS&quot;,
-                        &quot;device_type&quot;: &quot;1&quot;,
-                        &quot;short_hash&quot;: &quot;ITd1aWzR&quot;,
-                        &quot;latest_release&quot;: {
-                                &quot;id&quot;: 106,
-                                &quot;release_number&quot;: &quot;0.3.0b1&quot;,
-                                &quot;release_notes&quot;: &quot;&quot;,
-                                &quot;release_date&quot;: &quot;2015-11-11T10:31:12.025Z&quot;,
-                                &quot;minimum_os_version&quot;: &quot;7.0&quot;,
-                                &quot;size&quot;: &quot;0.19 MB&quot;,
-                                &quot;short_hash&quot;: &quot;N44G3jcd&quot;,
-                                &quot;cf_bundle_short_version_string&quot;: &quot;0.3.0&quot;,
-                                &quot;cf_bundle_version&quot;: &quot;0.3.0b1&quot;,
-                                &quot;is_ios_enterprise_build&quot;: false,
-                                &quot;identifier&quot;: &quot;W9875NV3WF.com.hipo.HappyBird&quot;
-                        },
-                        &quot;icon_original&quot;: &quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;,
-                        &quot;icon_thumbnail&quot;: &quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;
-                },
-                {
-                        &quot;id&quot;: 3,
-                        &quot;name&quot;: &quot;my new fancy app&quot;,
-                        &quot;os_name&quot;: &quot;Android&quot;,
-                        &quot;device_type&quot;: &quot;3&quot;,
-                        &quot;short_hash&quot;: &quot;zFBQ1NoV&quot;,
-                        &quot;latest_release&quot;: {
-                                &quot;id&quot;: 133,
-                                &quot;release_number&quot;: &quot;1.0&quot;,
-                                &quot;release_notes&quot;: &quot;&quot;,
-                                &quot;release_date&quot;: &quot;2015-11-17T14:56:10.821Z&quot;,
-                                &quot;minimum_os_version&quot;: &quot;Android 4.0.3, 4.0.4&quot;,
-                                &quot;size&quot;: &quot;7.59 MB&quot;,
-                                &quot;short_hash&quot;: &quot;oNZ4QpAG&quot;
-                        },
-                        &quot;icon_original&quot;: &quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;,
-                        &quot;icon_thumbnail&quot;: &quot;http://ubuntu.local/static/img/appicon.jpg&quot;
-                }
-                ...
-        ]
-}
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="s">&quot;https://api.tryouts.io/v1/applications/?page=3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="s">&quot;https://api.tryouts.io/v1/applications/?page=1&quot;</span><span class="p">,</span>
+    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
+            <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;iOS&quot;</span><span class="p">,</span>
+            <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;ITd1aWzR&quot;</span><span class="p">,</span>
+            <span class="s">&quot;latest_release&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">106</span><span class="p">,</span>
+                <span class="s">&quot;release_number&quot;</span><span class="p">:</span> <span class="s">&quot;0.3.0b1&quot;</span><span class="p">,</span>
+                <span class="s">&quot;release_notes&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                <span class="s">&quot;release_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-11T10:31:12.025Z&quot;</span><span class="p">,</span>
+                <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;7.0&quot;</span><span class="p">,</span>
+                <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;0.19 MB&quot;</span><span class="p">,</span>
+                <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;N44G3jcd&quot;</span><span class="p">,</span>
+                <span class="s">&quot;cf_bundle_short_version_string&quot;</span><span class="p">:</span> <span class="s">&quot;0.3.0&quot;</span><span class="p">,</span>
+                <span class="s">&quot;cf_bundle_version&quot;</span><span class="p">:</span> <span class="s">&quot;0.3.0b1&quot;</span><span class="p">,</span>
+                <span class="s">&quot;is_ios_enterprise_build&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+                <span class="s">&quot;identifier&quot;</span><span class="p">:</span> <span class="s">&quot;W9875NV3WF.com.hipo.HappyBird&quot;</span>
+            <span class="p">},</span>
+            <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+            <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
+            <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
+            <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+            <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;zFBQ1NoV&quot;</span><span class="p">,</span>
+            <span class="s">&quot;latest_release&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">133</span><span class="p">,</span>
+                <span class="s">&quot;release_number&quot;</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span>
+                <span class="s">&quot;release_notes&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                <span class="s">&quot;release_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-17T14:56:10.821Z&quot;</span><span class="p">,</span>
+                <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 4.0.3, 4.0.4&quot;</span><span class="p">,</span>
+                <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;7.59 MB&quot;</span><span class="p">,</span>
+                <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span>
+            <span class="p">},</span>
+            <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+            <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon.jpg&quot;</span>
+        <span class="p">},</span>
+        <span class="o">...</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -260,22 +262,22 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/</strong></p>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
-        <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
-        <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
-        <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;zFBQ1NoV&quot;</span><span class="p">,</span>
-        <span class="s">&quot;latest_release&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">133</span><span class="p">,</span>
-                <span class="s">&quot;release_number&quot;</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span>
-                <span class="s">&quot;release_notes&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-                <span class="s">&quot;release_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-17T14:56:10.821Z&quot;</span><span class="p">,</span>
-                <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 4.0.3, 4.0.4&quot;</span><span class="p">,</span>
-                <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;7.59 MB&quot;</span><span class="p">,</span>
-                <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span>
-        <span class="p">},</span>
-        <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
-        <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon.jpg&quot;</span>
+    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;my new fancy app&quot;</span><span class="p">,</span>
+    <span class="s">&quot;os_name&quot;</span><span class="p">:</span> <span class="s">&quot;Android&quot;</span><span class="p">,</span>
+    <span class="s">&quot;device_type&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+    <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;zFBQ1NoV&quot;</span><span class="p">,</span>
+    <span class="s">&quot;latest_release&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">133</span><span class="p">,</span>
+        <span class="s">&quot;release_number&quot;</span><span class="p">:</span> <span class="s">&quot;1.0&quot;</span><span class="p">,</span>
+        <span class="s">&quot;release_notes&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+        <span class="s">&quot;release_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-17T14:56:10.821Z&quot;</span><span class="p">,</span>
+        <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 4.0.3, 4.0.4&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;7.59 MB&quot;</span><span class="p">,</span>
+        <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+    <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon.jpg&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -291,41 +293,41 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-        <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
-        <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">&quot;count&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s">&quot;next&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;first_name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy&quot;</span><span class="p">,</span>
+            <span class="s">&quot;last_name&quot;</span><span class="p">:</span> <span class="s">&quot;tester&quot;</span><span class="p">,</span>
+            <span class="s">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[</span>
                 <span class="p">{</span>
-                        <span class="s">&quot;first_name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;last_name&quot;</span><span class="p">:</span> <span class="s">&quot;tester&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[</span>
-                                <span class="p">{</span>
-                                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-                                        <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                                        <span class="s">&quot;udid&quot;</span><span class="p">:</span> <span class="s">&quot;7c8aff46e2e9517bbe8dec7dc0a73ad500000000&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;os&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;os_version&quot;</span><span class="p">:</span> <span class="s">&quot;iOS 8.1&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;model&quot;</span><span class="p">:</span> <span class="s">&quot;iPhone 6&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;hex_id&quot;</span><span class="p">:</span> <span class="s">&quot;a098ceef-3836-4cae-932d-b7f7dbcc9e81&quot;</span>
-                                <span class="p">},</span>
-                                <span class="p">{</span>
-                                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-                                        <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                                        <span class="s">&quot;udid&quot;</span><span class="p">:</span> <span class="s">&quot;9337d45be4824226bfaa53ede1f082ce&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;os&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 5.1.1&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;model&quot;</span><span class="p">:</span> <span class="s">&quot;Nexus 6&quot;</span><span class="p">,</span>
-                                        <span class="s">&quot;hex_id&quot;</span><span class="p">:</span> <span class="s">&quot;d7d5b3f8-1ebc-4935-983a-84a0acf31754&quot;</span>
-                                <span class="p">}</span>
-                        <span class="p">],</span>
-                        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy tester&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;fancytester@tryouts.io&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;date_joined&quot;</span><span class="p">:</span> <span class="s">&quot;2015-10-22T13:44:59Z&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;avatar_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://www.gravatar.com/avatar/0488cdedcdbed4d47779329d46bc4c3a?s=240&amp;d=https%3A</span><span class="si">%2F%2F</span><span class="s">tryouts.io</span><span class="si">%2F</span><span class="s">static</span><span class="si">%2F</span><span class="s">img</span><span class="si">%2F</span><span class="s">default-avatar.png&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;avatar_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://www.gravatar.com/avatar/0488cdedcdbed4d47779329d46bc4c3a?s=90&amp;d=https%3A</span><span class="si">%2F%2F</span><span class="s">tryouts.io</span><span class="si">%2F</span><span class="s">static</span><span class="si">%2F</span><span class="s">img</span><span class="si">%2F</span><span class="s">default-avatar.png&quot;</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                    <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s">&quot;udid&quot;</span><span class="p">:</span> <span class="s">&quot;7c8aff46e2e9517bbe8dec7dc0a73ad500000000&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;os&quot;</span><span class="p">:</span> <span class="s">&quot;1&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;os_version&quot;</span><span class="p">:</span> <span class="s">&quot;iOS 8.1&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;model&quot;</span><span class="p">:</span> <span class="s">&quot;iPhone 6&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;hex_id&quot;</span><span class="p">:</span> <span class="s">&quot;a098ceef-3836-4cae-932d-b7f7dbcc9e81&quot;</span>
                 <span class="p">},</span>
-                <span class="o">....</span>
-        <span class="p">]</span>
+                <span class="p">{</span>
+                    <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+                    <span class="s">&quot;owner&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                    <span class="s">&quot;udid&quot;</span><span class="p">:</span> <span class="s">&quot;9337d45be4824226bfaa53ede1f082ce&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;os&quot;</span><span class="p">:</span> <span class="s">&quot;3&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 5.1.1&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;model&quot;</span><span class="p">:</span> <span class="s">&quot;Nexus 6&quot;</span><span class="p">,</span>
+                    <span class="s">&quot;hex_id&quot;</span><span class="p">:</span> <span class="s">&quot;d7d5b3f8-1ebc-4935-983a-84a0acf31754&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy tester&quot;</span><span class="p">,</span>
+            <span class="s">&quot;email&quot;</span><span class="p">:</span> <span class="s">&quot;fancytester@tryouts.io&quot;</span><span class="p">,</span>
+            <span class="s">&quot;date_joined&quot;</span><span class="p">:</span> <span class="s">&quot;2015-10-22T13:44:59Z&quot;</span><span class="p">,</span>
+            <span class="s">&quot;avatar_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://www.gravatar.com/avatar/0488cdedcdbed4d47779329d46bc4c3a?s=240&amp;d=https%3A</span><span class="si">%2F%2F</span><span class="s">tryouts.io</span><span class="si">%2F</span><span class="s">static</span><span class="si">%2F</span><span class="s">img</span><span class="si">%2F</span><span class="s">default-avatar.png&quot;</span><span class="p">,</span>
+            <span class="s">&quot;avatar_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://www.gravatar.com/avatar/0488cdedcdbed4d47779329d46bc4c3a?s=90&amp;d=https%3A</span><span class="si">%2F%2F</span><span class="s">tryouts.io</span><span class="si">%2F</span><span class="s">static</span><span class="si">%2F</span><span class="s">img</span><span class="si">%2F</span><span class="s">default-avatar.png&quot;</span>
+        <span class="p">},</span>
+        <span class="o">....</span>
+    <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -342,7 +344,7 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
         <a href="invitations.html" class="btn btn-neutral float-right" title="Invitations" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to Tryouts’ API Documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="authentication.html" class="btn btn-neutral" title="Authentication" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

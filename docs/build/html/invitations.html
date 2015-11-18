@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="Tryouts v1 documentation" href="index.html"/>
+        <link rel="next" title="Releases" href="releases.html"/>
         <link rel="prev" title="Applications" href="applications.html"/> 
 
   
@@ -86,6 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#create-invitation">Create Invitation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
 </ul>
 
             
@@ -135,22 +137,22 @@
 <div class="section" id="create-invitation">
 <h2>Create Invitation<a class="headerlink" href="#create-invitation" title="Permalink to this headline">¶</a></h2>
 <p>Method: <strong>POST</strong>
-Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/invitations/</strong></p>
+Endpoint: <strong>/v1/applications/&lt;application_short_hash&gt;/invitations/</strong></p>
 <p>Example Requests:</p>
 <div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/invitations/&#39; \
 -X POST \
 -H &quot;Authorization: app_id:app_secret&quot; \
 -H &quot;Content-Type: application/json&quot; \
 -d &#39;{
-        &quot;invitations&quot;:[
-                {
-                        &quot;receiver&quot;: &quot;fancy+tester@tryouts.io&quot;,
-                        &quot;is_admin&quot;: true
-                },
-                {
-                        &quot;receiver&quot;: &quot;fancy+tester2@tryouts.io&quot;
-                }
-        ]
+    &quot;invitations&quot;:[
+        {
+            &quot;receiver&quot;: &quot;fancy+tester@tryouts.io&quot;,
+            &quot;is_admin&quot;: true
+        },
+        {
+            &quot;receiver&quot;: &quot;fancy+tester2@tryouts.io&quot;
+        }
+    ]
 }&#39;
 </pre></div>
 </div>
@@ -160,28 +162,28 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/invitations/</strong></p>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
-        <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">63</span><span class="p">,</span>
-                        <span class="s">&quot;sender&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                        <span class="s">&quot;receiver&quot;</span><span class="p">:</span> <span class="s">&quot;fancy+tester@tryouts.io&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;invite_code&quot;</span><span class="p">:</span> <span class="s">&quot;2e5b7ef3-19fa-495b-980f-4b60a7f54fb3&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;application&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-                        <span class="s">&quot;is_used&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-                        <span class="s">&quot;is_admin&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-                        <span class="s">&quot;date_created&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-18T12:17:53.812Z&quot;</span>
-                <span class="p">},</span>
-                <span class="p">{</span>
-                        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
-                        <span class="s">&quot;sender&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-                        <span class="s">&quot;receiver&quot;</span><span class="p">:</span> <span class="s">&quot;fancy+tester2@tryouts.io&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;invite_code&quot;</span><span class="p">:</span> <span class="s">&quot;0ef3eaba-145c-45d6-aaaa-6674d7df9ec7&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;application&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
-                        <span class="s">&quot;is_used&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-                        <span class="s">&quot;is_admin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-                        <span class="s">&quot;date_created&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-18T12:17:56.335Z&quot;</span>
-                <span class="p">}</span>
-        <span class="p">]</span>
+    <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">63</span><span class="p">,</span>
+            <span class="s">&quot;sender&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s">&quot;receiver&quot;</span><span class="p">:</span> <span class="s">&quot;fancy+tester@tryouts.io&quot;</span><span class="p">,</span>
+            <span class="s">&quot;invite_code&quot;</span><span class="p">:</span> <span class="s">&quot;2e5b7ef3-19fa-495b-980f-4b60a7f54fb3&quot;</span><span class="p">,</span>
+            <span class="s">&quot;application&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
+            <span class="s">&quot;is_used&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s">&quot;is_admin&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s">&quot;date_created&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-18T12:17:53.812Z&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+            <span class="s">&quot;sender&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s">&quot;receiver&quot;</span><span class="p">:</span> <span class="s">&quot;fancy+tester2@tryouts.io&quot;</span><span class="p">,</span>
+            <span class="s">&quot;invite_code&quot;</span><span class="p">:</span> <span class="s">&quot;0ef3eaba-145c-45d6-aaaa-6674d7df9ec7&quot;</span><span class="p">,</span>
+            <span class="s">&quot;application&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
+            <span class="s">&quot;is_used&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s">&quot;is_admin&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s">&quot;date_created&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-18T12:17:56.335Z&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -194,6 +196,8 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/invitations/</strong></p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="releases.html" class="btn btn-neutral float-right" title="Releases" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="applications.html" class="btn btn-neutral" title="Applications" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

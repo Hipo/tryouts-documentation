@@ -20,8 +20,10 @@ Contents:
 .. toctree::
     :maxdepth: 2
 
+    authentication.rst
     applications.rst
     invitations.rst
+    releases.rst
 
 
 Indices and tables
