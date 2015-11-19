@@ -146,7 +146,9 @@ Response:
             "release_date": "2015-11-17T14:56:10.821Z",
             "minimum_os_version": "Android 4.0.3, 4.0.4",
             "size": "7.59 MB",
-            "short_hash": "oNZ4QpAG"
+            "short_hash": "oNZ4QpAG",
+            "download_link": "https://tryouts.io/releases/zFBQ1NoV/",
+            "public_install_link": "https://tryouts.io/releases/zFBQ1NoV/install/"
         },
         "icon_original": "http://ubuntu.local/static/img/appicon@2x.jpg",
         "icon_thumbnail": "http://ubuntu.local/static/img/appicon.jpg"
