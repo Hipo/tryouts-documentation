@@ -24,10 +24,17 @@ Example Requests:
     -d '{
         "name": "My new fancy app",
         "device_type": 1,
-        "icon_file": "base64 image string"
+        "icon_file": "base64 image as a string"
     }'
 
-.. note:: the field `icon_file` is optional.
+.. note:: 
+    **a base64 image**
+    ``data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7``
+
+    **icon_file accepts only the part after "base64,"**
+    ``R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7``
+.. note:: the field ``icon_file`` is optional.
+
 
 Response:
 

@@ -169,13 +169,20 @@ Endpoint: <strong>/v1/applications/</strong></p>
 -d &#39;{
     &quot;name&quot;: &quot;My new fancy app&quot;,
     &quot;device_type&quot;: 1,
-    &quot;icon_file&quot;: &quot;base64 image string&quot;
+    &quot;icon_file&quot;: &quot;base64 image as a string&quot;
 }&#39;
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">the field <cite>icon_file</cite> is optional.</p>
+<p><strong>a base64 image</strong>
+<code class="docutils literal"><span class="pre">data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7</span></code></p>
+<p class="last"><strong>icon_file accepts only the part after &#8220;base64,&#8221;</strong>
+<code class="docutils literal"><span class="pre">R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7</span></code></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the field <code class="docutils literal"><span class="pre">icon_file</span></code> is optional.</p>
 </div>
 <p>Response:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
@@ -219,6 +226,8 @@ Endpoint: <strong>/v1/applications/</strong></p>
                 <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;7.0&quot;</span><span class="p">,</span>
                 <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;0.19 MB&quot;</span><span class="p">,</span>
                 <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;N44G3jcd&quot;</span><span class="p">,</span>
+                <span class="s">&quot;download_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/N44G3jcd/&quot;</span><span class="p">,</span>
+                <span class="s">&quot;public_install_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/N44G3jcd/install/&quot;</span><span class="p">,</span>
                 <span class="s">&quot;cf_bundle_short_version_string&quot;</span><span class="p">:</span> <span class="s">&quot;0.3.0&quot;</span><span class="p">,</span>
                 <span class="s">&quot;cf_bundle_version&quot;</span><span class="p">:</span> <span class="s">&quot;0.3.0b1&quot;</span><span class="p">,</span>
                 <span class="s">&quot;is_ios_enterprise_build&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
