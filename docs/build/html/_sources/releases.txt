@@ -15,7 +15,7 @@ Example Requests:
     -F "notes=release-notes-here" \
     -F "notify=1" \
     -F "status=2" \
-    -H "Authorization: app_id:app_secret"
+    -H "Authorization: api_key:api_secret"
 
 Response:
 

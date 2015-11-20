@@ -19,7 +19,7 @@ Example Requests:
 
     curl 'https://api.tryouts.io/v1/applications/' \
     -X POST \
-    -H "Authorization: app_id:app_secret" \
+    -H "Authorization: api_key:api_secret" \
     -H "Content-Type: application/json" \
     -d '{
         "name": "My new fancy app",
@@ -60,7 +60,7 @@ Example Requests:
 ::
 
     curl 'https://api.tryouts.io/v1/applications/' \
-    -H "Authorization: app_id:app_secret" \
+    -H "Authorization: api_key:api_secret" \
 
 Response:
 
@@ -127,7 +127,7 @@ Example Requests:
 ::
 
     curl 'https://api.tryouts.io/v1/applications/oNZ4QpAG/' \
-    -H "Authorization: app_id:app_secret" \
+    -H "Authorization: api_key:api_secret" \
 
 Response:
 
@@ -164,7 +164,7 @@ Example Requests:
 ::
 
     curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/' \
-    -H "Authorization: app_id:app_secret" \
+    -H "Authorization: api_key:api_secret" \
 
 Response:
 

@@ -82,6 +82,7 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Invitations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#create-invitation">Create Invitation</a></li>
@@ -141,7 +142,7 @@ Endpoint: <strong>/v1/applications/&lt;application_short_hash&gt;/invitations/</
 <p>Example Requests:</p>
 <div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/invitations/&#39; \
 -X POST \
--H &quot;Authorization: app_id:app_secret&quot; \
+-H &quot;Authorization: api_key:api_secret&quot; \
 -H &quot;Content-Type: application/json&quot; \
 -d &#39;{
     &quot;invitations&quot;:[

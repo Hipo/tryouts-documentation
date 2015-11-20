@@ -12,7 +12,7 @@ Example Requests:
 
     curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/invitations/' \
     -X POST \
-    -H "Authorization: app_id:app_secret" \
+    -H "Authorization: api_key:api_secret" \
     -H "Content-Type: application/json" \
     -d '{
         "invitations":[
