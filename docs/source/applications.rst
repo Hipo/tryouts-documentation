@@ -110,8 +110,8 @@ Response:
                     "size": "7.59 MB",
                     "short_hash": "oNZ4QpAG"
                 },
-                "icon_original": "http://ubuntu.local/static/img/appicon@2x.jpg",
-                "icon_thumbnail": "http://ubuntu.local/static/img/appicon.jpg"
+                "icon_original": "https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg",
+                "icon_thumbnail": "https://tryouts.s3.amazonaws.com/static/img/appicon.jpg"
             },
             ...
         ]
@@ -150,8 +150,8 @@ Response:
             "download_link": "https://tryouts.io/releases/zFBQ1NoV/",
             "public_install_link": "https://tryouts.io/releases/zFBQ1NoV/install/"
         },
-        "icon_original": "http://ubuntu.local/static/img/appicon@2x.jpg",
-        "icon_thumbnail": "http://ubuntu.local/static/img/appicon.jpg"
+        "icon_original": "https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg",
+        "icon_thumbnail": "https://tryouts.s3.amazonaws.com/static/img/appicon.jpg"
     }
 
 Application Testers
