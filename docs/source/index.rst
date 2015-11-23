@@ -9,11 +9,11 @@ Welcome to Tryouts' API Documentation!
 Standard API responses are in JSON format.
 
 If you have any questions or find any issues, please get in touch via
-info@tryouts.io.
+info@tryouts.io. You can also improve this documentation. It will be hugely appreciated. It is publicly available in `Github <https://github.com/Hipo/tryouts-documentation>`_.
 
 .. note:: `ISO Datetime`_ and format is used on all date & datetime fields.
 
-.. warning:: Every request URL needs a trailing slash ‘/’ in the end. This is a common mistake.
+.. warning:: Every request URL has a trailing slash ‘/’ at the end. This is important for POST requests. 
 
 Contents:
 
