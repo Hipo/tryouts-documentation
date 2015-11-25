@@ -126,7 +126,7 @@ Example Requests:
 
 ::
 
-    curl 'https://api.tryouts.io/v1/applications/oNZ4QpAG/' \
+    curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/' \
     -H "Authorization: api_key:api_secret" \
 
 Response:
@@ -176,6 +176,7 @@ Response:
         "previous": null,
         "results": [
             {
+                "id": 1,
                 "first_name": "fancy",
                 "last_name": "tester",
                 "devices": [
@@ -207,3 +208,23 @@ Response:
             ....
         ]
     }
+
+
+Remove Tester
+=============
+Method: **DELETE**
+Endpoint: **/v1/applications/<short_hash>/testers/<tester_id>**
+
+Example Requests:
+
+::
+
+    curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/1' \
+    -X DELETE \
+    -H "Authorization: api_key:api_secret" \
+
+Response:
+
+::
+
+    Status 204 NO CONTENT

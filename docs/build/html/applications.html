@@ -88,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#list-applications">List Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#application-detail">Application Detail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#application-testers">Application Testers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-tester">Remove Tester</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="invitations.html">Invitations</a></li>
@@ -265,7 +266,7 @@ Endpoint: <strong>/v1/applications/</strong></p>
 <p>Method: <strong>GET</strong>
 Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/</strong></p>
 <p>Example Requests:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/oNZ4QpAG/&#39; \
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/&#39; \
 -H &quot;Authorization: api_key:api_secret&quot; \
 </pre></div>
 </div>
@@ -309,6 +310,7 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
     <span class="s">&quot;previous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
     <span class="s">&quot;results&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
+            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
             <span class="s">&quot;first_name&quot;</span><span class="p">:</span> <span class="s">&quot;fancy&quot;</span><span class="p">,</span>
             <span class="s">&quot;last_name&quot;</span><span class="p">:</span> <span class="s">&quot;tester&quot;</span><span class="p">,</span>
             <span class="s">&quot;devices&quot;</span><span class="p">:</span> <span class="p">[</span>
@@ -340,6 +342,21 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
         <span class="o">....</span>
     <span class="p">]</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-tester">
+<h2>Remove Tester<a class="headerlink" href="#remove-tester" title="Permalink to this headline">¶</a></h2>
+<p>Method: <strong>DELETE</strong>
+Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/&lt;tester_id&gt;</strong></p>
+<p>Example Requests:</p>
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/1&#39; \
+-X DELETE \
+-H &quot;Authorization: api_key:api_secret&quot; \
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-python"><div class="highlight"><pre>Status 204 NO CONTENT
 </pre></div>
 </div>
 </div>
