@@ -60,7 +60,7 @@ Example Requests:
 ::
 
     curl 'https://api.tryouts.io/v1/applications/' \
-    -H "Authorization: api_key:api_secret" \
+    -H "Authorization: api_key:api_secret" 
 
 Response:
 
@@ -108,7 +108,9 @@ Response:
                     "release_date": "2015-11-17T14:56:10.821Z",
                     "minimum_os_version": "Android 4.0.3, 4.0.4",
                     "size": "7.59 MB",
-                    "short_hash": "oNZ4QpAG"
+                    "short_hash": "oNZ4QpAG",
+                    "download_link": "https://tryouts.io/releases/oNZ4QpAG/",
+                    "public_install_link": "https://tryouts.io/releases/oNZ4QpAG/install/"
                 },
                 "icon_original": "https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg",
                 "icon_thumbnail": "https://tryouts.s3.amazonaws.com/static/img/appicon.jpg"
@@ -127,7 +129,7 @@ Example Requests:
 ::
 
     curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/' \
-    -H "Authorization: api_key:api_secret" \
+    -H "Authorization: api_key:api_secret" 
 
 Response:
 
@@ -147,8 +149,8 @@ Response:
             "minimum_os_version": "Android 4.0.3, 4.0.4",
             "size": "7.59 MB",
             "short_hash": "oNZ4QpAG",
-            "download_link": "https://tryouts.io/releases/zFBQ1NoV/",
-            "public_install_link": "https://tryouts.io/releases/zFBQ1NoV/install/"
+            "download_link": "https://tryouts.io/releases/oNZ4QpAG/",
+            "public_install_link": "https://tryouts.io/releases/oNZ4QpAG/install/"
         },
         "icon_original": "https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg",
         "icon_thumbnail": "https://tryouts.s3.amazonaws.com/static/img/appicon.jpg"
@@ -164,7 +166,7 @@ Example Requests:
 ::
 
     curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/' \
-    -H "Authorization: api_key:api_secret" \
+    -H "Authorization: api_key:api_secret" 
 
 Response:
 
@@ -213,15 +215,15 @@ Response:
 Remove Tester
 =============
 Method: **DELETE**
-Endpoint: **/v1/applications/<short_hash>/testers/<tester_id>**
+Endpoint: **/v1/applications/<short_hash>/testers/<tester_id>/**
 
 Example Requests:
 
 ::
 
-    curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/1' \
+    curl 'https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/1/' \
     -X DELETE \
-    -H "Authorization: api_key:api_secret" \
+    -H "Authorization: api_key:api_secret"
 
 Response:
 

@@ -204,7 +204,7 @@ Endpoint: <strong>/v1/applications/</strong></p>
 Endpoint: <strong>/v1/applications/</strong></p>
 <p>Example Requests:</p>
 <div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/&#39; \
--H &quot;Authorization: api_key:api_secret&quot; \
+-H &quot;Authorization: api_key:api_secret&quot;
 </pre></div>
 </div>
 <p>Response:</p>
@@ -250,10 +250,12 @@ Endpoint: <strong>/v1/applications/</strong></p>
                 <span class="s">&quot;release_date&quot;</span><span class="p">:</span> <span class="s">&quot;2015-11-17T14:56:10.821Z&quot;</span><span class="p">,</span>
                 <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 4.0.3, 4.0.4&quot;</span><span class="p">,</span>
                 <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;7.59 MB&quot;</span><span class="p">,</span>
-                <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span>
+                <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span><span class="p">,</span>
+                <span class="s">&quot;download_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/oNZ4QpAG/&quot;</span><span class="p">,</span>
+                <span class="s">&quot;public_install_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/oNZ4QpAG/install/&quot;</span>
             <span class="p">},</span>
-            <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
-            <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon.jpg&quot;</span>
+            <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+            <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;</span>
         <span class="p">},</span>
         <span class="o">...</span>
     <span class="p">]</span>
@@ -267,7 +269,7 @@ Endpoint: <strong>/v1/applications/</strong></p>
 Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/</strong></p>
 <p>Example Requests:</p>
 <div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/&#39; \
--H &quot;Authorization: api_key:api_secret&quot; \
+-H &quot;Authorization: api_key:api_secret&quot;
 </pre></div>
 </div>
 <p>Response:</p>
@@ -285,11 +287,11 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/</strong></p>
         <span class="s">&quot;minimum_os_version&quot;</span><span class="p">:</span> <span class="s">&quot;Android 4.0.3, 4.0.4&quot;</span><span class="p">,</span>
         <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="s">&quot;7.59 MB&quot;</span><span class="p">,</span>
         <span class="s">&quot;short_hash&quot;</span><span class="p">:</span> <span class="s">&quot;oNZ4QpAG&quot;</span><span class="p">,</span>
-        <span class="s">&quot;download_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/zFBQ1NoV/&quot;</span><span class="p">,</span>
-        <span class="s">&quot;public_install_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/zFBQ1NoV/install/&quot;</span>
+        <span class="s">&quot;download_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/oNZ4QpAG/&quot;</span><span class="p">,</span>
+        <span class="s">&quot;public_install_link&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.io/releases/oNZ4QpAG/install/&quot;</span>
     <span class="p">},</span>
-    <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
-    <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;http://ubuntu.local/static/img/appicon.jpg&quot;</span>
+    <span class="s">&quot;icon_original&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon@2x.jpg&quot;</span><span class="p">,</span>
+    <span class="s">&quot;icon_thumbnail&quot;</span><span class="p">:</span> <span class="s">&quot;https://tryouts.s3.amazonaws.com/static/img/appicon.jpg&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -300,7 +302,7 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/</strong></p>
 Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
 <p>Example Requests:</p>
 <div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/&#39; \
--H &quot;Authorization: api_key:api_secret&quot; \
+-H &quot;Authorization: api_key:api_secret&quot;
 </pre></div>
 </div>
 <p>Response:</p>
@@ -348,11 +350,11 @@ Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/</strong></p>
 <div class="section" id="remove-tester">
 <h2>Remove Tester<a class="headerlink" href="#remove-tester" title="Permalink to this headline">¶</a></h2>
 <p>Method: <strong>DELETE</strong>
-Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/&lt;tester_id&gt;</strong></p>
+Endpoint: <strong>/v1/applications/&lt;short_hash&gt;/testers/&lt;tester_id&gt;/</strong></p>
 <p>Example Requests:</p>
-<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/1&#39; \
+<div class="highlight-python"><div class="highlight"><pre>curl &#39;https://api.tryouts.io/v1/applications/zFBQ1NoV/testers/1/&#39; \
 -X DELETE \
--H &quot;Authorization: api_key:api_secret&quot; \
+-H &quot;Authorization: api_key:api_secret&quot;
 </pre></div>
 </div>
 <p>Response:</p>
