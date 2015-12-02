@@ -24,6 +24,7 @@ Contents:
     applications.rst
     invitations.rst
     releases.rst
+    integrations.rst
 
 
 Indices and tables
