@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="Tryouts v1 documentation" href="index.html"/>
+        <link rel="next" title="Integratons" href="integrations.html"/>
         <link rel="prev" title="Invitations" href="invitations.html"/> 
 
   
@@ -88,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#create-release">Create Release</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="integrations.html">Integratons</a></li>
 </ul>
 
             
@@ -138,6 +140,33 @@
 <h2>Create Release<a class="headerlink" href="#create-release" title="Permalink to this headline">¶</a></h2>
 <p>Method: <strong>POST</strong>
 Endpoint: <strong>/v1/applications/&lt;application_short_hash&gt;/releases/</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="3%" />
+<col width="4%" />
+<col width="92%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Required</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>false</td>
+<td>2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won&#8217;t be distributed to testers. This also prevents release from showing up for SDK update</td>
+</tr>
+<tr class="row-odd"><td>notify</td>
+<td>false</td>
+<td>Notify testers? 1 for yes, 0 for no</td>
+</tr>
+<tr class="row-even"><td>notes</td>
+<td>false</td>
+<td>Release notes</td>
+</tr>
+</tbody>
+</table>
 <p>Example Requests:</p>
 <div class="highlight-python"><div class="highlight"><pre>curl https://api.tryouts.io/v1/applications/zFBQ1NoV/releases/ \
 -F &quot;build=@&lt;-build-file-path&gt;&quot; \
@@ -165,6 +194,8 @@ Endpoint: <strong>/v1/applications/&lt;application_short_hash&gt;/releases/</str
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="integrations.html" class="btn btn-neutral float-right" title="Integratons" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="invitations.html" class="btn btn-neutral" title="Invitations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -6,6 +6,14 @@ Create Release
 Method: **POST**
 Endpoint: **/v1/applications/<application_short_hash>/releases/**
 
+======== ========== ===================================================================================================================================================================================================================== 
+Field    Required   Description                                                                                                                                                                                                          
+======== ========== ===================================================================================================================================================================================================================== 
+status   false      2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update  
+notify   false      Notify testers? 1 for yes, 0 for no                                                                                                                                                                                  
+notes    false      Release notes     
+======== ========== ===================================================================================================================================================================================================================== 
+
 Example Requests:
 
 ::
